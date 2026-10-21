@@ -1,7 +1,7 @@
 # AutoLounge Min Garasje 🚗
 
 **En mobilvennlig skoleprototype laget med AI (Vibe Coding).** Prosjektet er inspirert av en reell utfordring hos AutoLounge AS, som driver med dekk, felger og dekkhotell i Norge.
-
+Hver sesong så må Auto Lounge AS kontakte en og en kunde for å gi dem tilbud på nye dekk dersom deres dekk er slitt på dekkhotellet.
 Målet er å gjøre det enklere for dekkhotellkunder å se dekkstatus, vurdere personlige tilbud og gi beskjed til verkstedet – uten at alle må kontaktes på telefon.
 
 > **Viktig:** Dette er en demonstrasjon med fiktive data, ikke en ekte kundeportal eller en integrasjon med Eontyre.
