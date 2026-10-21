@@ -1,0 +1,7 @@
+﻿ID;[License plate];Bilmerke;Bilmodell;Kundenummer;Kundenavn;Kundens mobil;[Booking secret];Season;Dimensjon1;Dimensjon2;Dimensjon3;Dimensjon4;[TyreBrand1];[TyreModel1];mm1;mm2;mm3;mm4;[DOT1];[DOT2];[DOT3];[DOT4];[Lowest tread depth]
+10001;DEMO123;Volvo;XC60;9001;Fiktiv Kunde 1;;;Winter;235/55-18;235/55-18;235/55-18;235/55-18;Nokian;Hakkapeliitta;3,8;4,0;3,6;3,9;1322;1322;1322;1322;3,6
+10002;DEMO123;Volvo;XC60;9001;Fiktiv Kunde 1;;;Summer;235/55-18;235/55-18;235/55-18;235/55-18;Michelin;Primacy;6,0;6,1;5,9;6,2;1224;1224;1224;1224;5,9
+10003;DEMO321;Toyota;Yaris;9001;Fiktiv Kunde 1;;;Summer;185/60-15;185/60-15;185/60-15;185/60-15;Bridgestone;Turanza;6,0;6,5;6,2;6,3;1625;1625;1625;1625;6,0
+10004;DEMO456;BMW;X3;9002;Fiktiv Kunde 2;;;Winter;225/60-18;225/60-18;225/60-18;225/60-18;Pirelli;Ice Zero;2,7;2,8;2,6;2,9;4020;4020;4020;4020;2,6
+10005;DEMO789;Volkswagen;Golf;9003;Fiktiv Kunde 3;;;Summer;205/55-16;205/55-16;205/55-16;205/55-16;Hankook;Ventus;2,1;2,2;2,0;2,3;0722;0722;0722;0722;2,0
+10006;DEMO012;Tesla;Model Y;9004;Fiktiv Kunde 4;;;Winter;255/45-19;255/45-19;255/45-19;255/45-19;Continental;VikingContact;6,4;6,3;6,5;6,2;3024;3024;3024;3024;6,2
