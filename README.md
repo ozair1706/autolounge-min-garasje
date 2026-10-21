@@ -15,11 +15,13 @@ Målet er å gjøre det enklere for dekkhotellkunder å se dekkstatus, vurdere p
 
 **Verkstedets oversikt**
 
-![Oversikt i AutoLounge Min Garasje](skjermbilder/01-oversikt-ny.png)
+<img width="2838" height="1458" alt="image" src="https://github.com/user-attachments/assets/be686568-ef89-422e-9a76-ae0706019d8e" />
+
 
 **Kundens Min Garasje**
 
-![Kundevisning i AutoLounge Min Garasje](skjermbilder/04-kundeapp-ny.png)
+<img width="530" height="1462" alt="image" src="https://github.com/user-attachments/assets/4e5e6982-930b-4f7a-9a81-afca9296a783" />
+
 
 ## ✨ Tre hovedfunksjoner
 
