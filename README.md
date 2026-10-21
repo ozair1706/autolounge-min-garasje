@@ -10,7 +10,7 @@ Målet er å gjøre det enklere for dekkhotellkunder å se dekkstatus, vurdere p
 ## 🔗 Se prosjektet
 
 - **Demovideo:** [Se demovideo på YouTube](https://youtu.be/AUY8g1Wwctg)
-- **Kildekode:** Denne GitHub-repositoriemappen.
+- **Kildekode:** [Denne GitHub-repositoriemappen.](https://github.com/ozair1706/autolounge-min-garasje)
 
 ## 📸 Skjermbilder
 
