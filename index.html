@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111519">
+  <meta name="description" content="AutoLounge Min Garasje – skoleprototype for digitale dekkhotelltilbud.">
+  <title>AutoLounge · Min Garasje – Skoleprototype</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Hovedmeny">
+    <div class="brand"><img class="brand-logo" src="assets/autolounge-logo.png" alt="AutoLounge AS logo"><div class="brand-word"><span>MIN GARASJE</span><small>kundeportal prototype</small></div></div>
+    <div class="side-label">ARBEIDSOMRÅDE</div>
+    <nav class="sidenav" id="sideNav" aria-label="Navigasjon">
+      <button class="nav-button active" data-view="overview"><span class="nav-icon">◫</span> Oversikt</button>
+      <button class="nav-button" data-view="hotels"><span class="nav-icon">▤</span> Dekkhotell <span id="navHotelCount" class="nav-count">0</span></button>
+      <button class="nav-button" data-view="offers"><span class="nav-icon">◇</span> Lag tilbud</button>
+      <button class="nav-button" data-view="customer"><span class="nav-icon">▣</span> Kundeapp <span class="side-spark">↗</span></button>
+      <button class="nav-button" data-view="about"><span class="nav-icon">ⓘ</span> Om prosjektet</button>
+    </nav>
+    <div class="side-bottom"><span class="dot"></span><div><strong>Skoleprototype</strong><span>Kun fiktive/anonymiserte data</span></div></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div class="top-start"><button id="mobileMenu" class="icon-button mobile-menu" aria-label="Vis meny">☰</button><div><div class="crumb">AUTOLOUNGE MIN GARASJE <span>/</span> <span id="crumbCurrent">OVERSIKT</span></div><strong id="pageTitle">Salgsoversikt</strong></div></div><div class="header-actions"><span class="live-chip"><span class="dot"></span> DEMOMODUS</span><button id="resetButton" class="btn btn-ghost btn-small">↺ <span>Nullstill demo</span></button></div></header>
+    <main class="main-content">
+      <section id="view-overview" class="view active" aria-label="Oversikt">
+        <div class="hero"><div class="hero-grid"></div><div class="hero-copy"><div class="eyebrow amber">AUTOLOUNGE AS / MIN GARASJE</div><h1>Gjør dekkhotell<br>til <em>smartere salg.</em></h1><p>Fra registrert mønsterdybde til et personlig tilbud – uten å ringe alle kundene først.</p><div class="hero-actions"><button class="btn btn-primary" data-go="hotels">Se dekkhotell <span>↗</span></button><button class="btn btn-soft" data-go="customer">Prøv kundeappen →</button></div></div><div class="hero-art" aria-hidden="true"><div class="wheel-ring outer"></div><div class="wheel-ring mid"></div><div class="wheel-ring inner"></div><div class="wheel-center">AL</div><div class="hero-tag">DIN GARASJE<br><b>ALLTID TILGJENGELIG</b></div></div></div>
+        <div class="stat-grid" id="statsGrid"></div>
+        <div class="two-column"><div class="panel"><div class="panel-title"><div><div class="eyebrow">ARBEIDSLISTE</div><h2>Trenger vurdering</h2></div><button class="text-button" data-go="hotels">Alle dekkhotell ↗</button></div><div id="priorityList" class="priority-list"></div></div><div class="panel"><div class="panel-title"><div><div class="eyebrow">TILBAKEMELDINGER</div><h2>Kundenes svar</h2></div><span class="mini-hint">Valg krever bekreftelse</span></div><div id="responseList" class="response-list"></div></div></div>
+        <div class="steps-banner"><div class="step-header"><span class="eyebrow">SLIK FUNGERER DEMOEN</span><strong>3 trinn. Én enkel løsning.</strong></div><div class="step"><b>01</b><span>Importer Eontyre-eksport</span></div><div class="step"><b>02</b><span>Lag 3 dekktilbud</span></div><div class="step"><b>03</b><span>Kunden velger</span></div></div>
+      </section>
+      <section id="view-hotels" class="view" aria-label="Dekkhotell">
+        <div class="page-heading"><div><div class="eyebrow">ADMINISTRASJON</div><h1>Dekkhotelloversikt</h1><p>Filtrer hjulsett, vurder mønsterdybde og finn kunder som trenger et tilbud.</p></div><div class="heading-actions"><button class="btn btn-outline" id="openImport">↑ Importer Excel / JSON / CSV</button></div></div>
+        <div class="panel import-panel" id="importPanel" hidden><div class="panel-title"><div><div class="eyebrow">FØRSTE FUNKSJON</div><h2>Importer Excel, JSON eller CSV fra Eontyre</h2></div><button id="closeImport" class="icon-button" aria-label="Lukk import">✕</button></div><p>Filen leses lokalt i nettleseren. Importen lager automatisk demoidentiteter (Kunde 01, TEST-01) og ignorerer navn, telefon, e-post, adresse, bookingkoder og hemmeligheter. <b>Bruk likevel kun fiktiv/anonymisert testfil.</b></p><div class="import-controls"><input type="file" id="csvFile" accept=".xlsx,.json,.csv,.tsv,.txt,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/json,text/csv"><button id="importButton" class="btn btn-primary">Importer fil →</button><a class="text-button" href="testdata/eontyre_eksempel.csv" download>Last ned test-CSV ↗</a></div><p class="tiny-note">Støtter Excel .xlsx og JSON direkte, samt CSV med semikolon, komma eller tabulator. Eldre .xls må lagres om som .xlsx. Import erstatter gjeldende demodata og tilbud.</p><div class="import-message" id="importMessage" role="status" aria-live="polite"></div></div>
+        <div class="panel table-panel"><div class="table-toolbar"><div class="toolbar-search"><span>⌕</span><input type="search" id="hotelSearch" placeholder="Søk etter bil, kunde eller dekk …" aria-label="Søk blant dekkhotell"></div><select id="hotelFilter" aria-label="Filtrer etter status"><option value="all">Alle hjulsett</option><option value="check">Bør vurderes</option><option value="offer">Har tilbud</option><option value="none">Uten målinger</option></select></div><div class="table-scroll"><table><thead><tr><th>Bil / kunde</th><th>Hjulsett</th><th>Dekk</th><th>Laveste måling</th><th>Status</th><th></th></tr></thead><tbody id="hotelsTable"></tbody></table></div><div class="table-foot"><span id="tableCount"></span><span>Tips: Klikk på et hjulsett for detaljer.</span></div></div>
+        <div class="panel detail-panel" id="hotelDetail" hidden></div>
+      </section>
+      <section id="view-offers" class="view" aria-label="Lag dekktilbud">
+        <div class="page-heading"><div><div class="eyebrow">TILBUDSVERKSTED</div><h1>Lag tre personlige tilbud</h1><p>Dere bestemmer dekk, priser og anbefaling. Kunden betaler først ved hjulskift.</p></div></div>
+        <div class="offer-selector panel"><label for="offerHotelSelect">VELG HJULSETT</label><select id="offerHotelSelect"></select><div id="offerVehicleInfo" class="offer-vehicle-info"></div></div>
+        <form id="offerForm"><div class="offer-editor-grid" id="offerEditors"></div><div class="offer-footer"><div><strong>Hva skjer når du publiserer?</strong><span>Tilbudene blir synlige for den valgte demokunden i «Kundeapp». Ingen SMS sendes.</span></div><button class="btn btn-primary" type="submit">Publiser 3 tilbud ↗</button></div></form>
+      </section>
+      <section id="view-customer" class="view" aria-label="Kundeapp">
+        <div class="page-heading"><div><div class="eyebrow">KUNDEVISNING / MOBILWEBAPP</div><h1>Min Garasje</h1><p>Opplev appen slik dekkhotellkunden kan se den fra mobilen sin.</p></div><span class="demo-badge">SIMULERT KUNDEMODUS · IKKE INNLOGGING</span></div>
+        <div class="customer-layout"><div class="customer-side panel"><div class="eyebrow">TEST EN KUNDE</div><h2>Velg demo-kunde</h2><label for="customerSelect">Kunde</label><select id="customerSelect"></select><p>En kunde kan ha flere biler, og hver bil kan ha flere hjulsett.</p><div class="customer-legend"><span class="legend-dot green"></span> Registrert hjulsett <br><span class="legend-dot orange"></span> Kontroll / tilbud aktuelt</div><div class="customer-note"><b>Viktig om personvern</b><br>Dette er kun en rollevisning i en skoleprototype. En ekte kundeportal må ha sikker innlogging og serverbasert tilgangskontroll.</div></div><div class="phone-stage"><div class="phone"><div class="phone-bar"><span class="phone-notch"></span></div><div class="phone-app"><div class="phone-head"><img class="phone-logo" src="assets/autolounge-logo.png" alt="AutoLounge AS"><span class="phone-icon">◌</span></div><div id="customerPhoneContent"></div><div class="phone-bottom"><span>⌂<small>Garasje</small></span><span>◇<small>Dekk</small></span><span>☷<small>Tilbud</small></span></div></div></div></div></div>
+      </section>
+      <section id="view-about" class="view" aria-label="Om prosjektet"><div class="page-heading"><div><div class="eyebrow">SKOLEPROSJEKT · VIBE CODING</div><h1>Om AutoLounge Min Garasje</h1><p>En enkel prototype som løser et reelt problem fra en norsk dekkbedrift.</p></div></div><div class="about-grid"><div class="panel"><span class="feature-icon">01</span><h2>Filimport</h2><p>Eontyre-inspirert eksport: importer hjulsett, knytt flere biler til samme kunde og se mønsterdybder. Testdata anonymiseres på import.</p></div><div class="panel"><span class="feature-icon">02</span><h2>Tre dekktilbud</h2><p>Verkstedet velger tre alternativer med priser og detaljer og publiserer dem for riktig hjulsett.</p></div><div class="panel"><span class="feature-icon">03</span><h2>Kunden svarer</h2><p>Kunden velger et tilbud, ber om oppringning eller ringer AutoLounge. Verkstedet bekrefter; betaling skjer ved hjulskift.</p></div></div><div class="panel about-wide"><h2>Hva er ekte – og hva er demo?</h2><div class="about-split"><div><h3>Dette virker i prototypen</h3><p>Filimport, filtrering, statusvurdering, tilbudsredigering, publisering, kundens valg, oppringningsforespørsler, bekreftelse og lokal lagring i samme nettleser.</p></div><div><h3>Dette er ikke koblet til drift</h3><p>Ingen Eontyre-API, SMS-utsending, betalingsløsning, ekte kundeinnlogging, lagerreservasjon eller felles database. Tilbud er ikke bindende før verkstedet har bekreftet.</p></div></div></div><div class="panel about-wide"><h2>Vilkår for sikker demo</h2><p>Last aldri opp ekte kundeeksport til en offentlig nettside som testfil eller GitHub. Appen er laget for fiktive opplysninger, og importen lagrer ikke telefon, e-post, navn, bookingkoder eller hemmeligheter. Den lagrer demoresultater i denne nettleserens localStorage. Klikk «Nullstill demo» for å slette dem.</p><a href="https://autoloungeas.no" target="_blank" rel="noopener noreferrer" class="text-button">AutoLounge sitt nettsted ↗</a></div></section>
+    </main>
+    <footer class="footer"><span>© AUTOLOUNGE MIN GARASJE · SKOLEPROTOTYPE 2026</span><span>Ikke tilknyttet Eontyre · Ingen kundedata sendes</span></footer>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="confirmModal" class="modal-backdrop" hidden><div class="modal"><h2>Nullstille prototypen?</h2><p>Alle dine lokale demoendringer og importerte testdata slettes. De fiktive eksempelkundene lastes inn på nytt.</p><div class="modal-actions"><button id="cancelReset" class="btn btn-outline">Avbryt</button><button id="confirmReset" class="btn btn-danger">Nullstill demo</button></div></div></div>
+</body>
+</html>
